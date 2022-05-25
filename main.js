@@ -34,9 +34,20 @@ document.writeln(fruit.fruitColor);
 // 6. הדפיסו למסך את סוג הפר.
 document.writeln(fruit.fruitType);
 
-// 7.
+// 7.	צרו אובייקט של כיתה, עם שדות של מספר הכיתה,
+//  מספר התלמידים ושמות התלמידים, תנו ערכים הגיוניים, שמות התלמידים הוא מערך של 5 שמות.
 
-// 8/
+var classGroup = {};
+classGroup.numOfClass = 10;
+classGroup.numOfStudients = 30;
+classGroup.namesOfClass = ["long", "doni", "mony", "vala", "moly"];
+
+console.log(classGroup);
+
+// 8.	הדפיסו למסך את שמות התלמידים, בהדפסות שונות.
+
+document.writeln(classGroup.namesOfClass);
+console.log(classGroup.namesOfClass);
 
 // 9. צרו אובייקט של גן ילדים , עם שדות של שם גננת,
 //  מספר הילדים ושמות הילדים, תנו ערכים הגיוניים, מספר הילדים הוא מערך של 10 שמות.
@@ -176,29 +187,159 @@ function catObjects() {
 // catObjects();
 
 // 18.צרו פונקציה הקולטת מספר מהמשתמש ומייצרת מספר אובייקטים.על פי הקלט,
-//     של כלב, לכול כלב יש שם,גיל, סוג ושם בעלים, 
+//     של כלב, לכול כלב יש שם,גיל, סוג ושם בעלים,
 // הדפיסו כול אובייקט למסך,
 //  כול אובייקט כ - p משלו.
 
-
 function dogObject() {
-    
+  var numOfObjects = prompt("Object Numbers:");
 
-    var numOfObjects = prompt("Object Numbers:");
-
-    for (var i = 0; i < numOfObjects; i++){
-        var dog = {};
-        dog.name = prompt("Dog's Name:");
-        dog.age = prompt("Age's Name:");
-        dog.type = prompt("Type's Name:");
-        dog.owners = prompt("Owner's Name:");
-        document.write("<p>" + " " + dog.name + " " + dog.age + " " + dog.type + " " + dog.owners + "</p>");
-
-    }
-
+  for (var i = 0; i < numOfObjects; i++) {
+    var dog = {};
+    dog.name = prompt("Dog's Name:");
+    dog.age = prompt("Age's Name:");
+    dog.type = prompt("Type's Name:");
+    dog.owners = prompt("Owner's Name:");
+    document.write(
+      "<p>" +
+        " " +
+        dog.name +
+        " " +
+        dog.age +
+        " " +
+        dog.type +
+        " " +
+        dog.owners +
+        "</p>"
+    );
+  }
 }
 
 // dogObject();
 
+// 19.	צרו פונקציה הקולטת מספר מהמשתמש ומייצרת מספר אובייקטים, על פי הקלט,
+//  של חרק, לכל חרק יש שם רגיל, שם מדעי, מספר רגליים והאם יש לו כנפיים
+//     .תנו להם ערכים מהמשתמש, הדפיסו רק את החרקים שיש להם כנפיים, כל חרק ב H3 משלו.
 
-19. 
+function bugFunction() {
+  var numOfBugs = +prompt("Number of Bugs:");
+
+  for (var i = 0; i < numOfBugs; i++) {
+    var bug = {};
+    bug.bugName = prompt("Bugs' Name:");
+    bug.bugScientificName = prompt("Bug Scientific Name:");
+    bug.numOfLegs = +prompt("Number Of Legs:");
+    bug.numOfWings = confirm("Does The Bug has Wings?:");
+    if (bug.numOfWings == true) {
+      document.write(
+        "<h3>" +
+          " " +
+          bug.bugName +
+          " " +
+          bug.bugScientificName +
+          " " +
+          bug.numOfLegs +
+          " " +
+          "</h3>"
+      );
+    }
+  }
+}
+
+// bugFunction();
+
+// 20.	צרו פונקציה הקולטת מספר מהמשתמש ומייצרת מספר אובייקטים, על פי הקלט, של ילד,
+//  לכל ילד יש שם מלא, גיל,
+// והאם הוא בגן.תנו להם ערכים מהמשתמש, הדפיסו רק את הילדים מעל גיל 4 למסך, כל ילד ב
+//  p משלו.
+
+function kidsObjects() {
+  var userInPut = +prompt("How Many Kids Do You Want?");
+  for (var i = 0; i < userInPut; i++) {
+    var kid = {};
+    kid.fullName = prompt("Full Name");
+    kid.kinderGarten = confirm("is The Kid at The Kinder Garten?");
+    kid.age = +prompt("Age:");
+    if (kid.age > 4) {
+      document.write("<p>" + " " + kid.fullName + " " + kid.age + " " + "</p>");
+    }
+  }
+}
+
+// kidsObjects();
+
+//  21.	צרו פונקציה המקבלת מספר כארגומנט ומייצרת מספר אובייקטים, על פי המספר, של מחשב, לכל מחשב יש חברה, דגם, משקל והאם יש במלאי.
+//  תנו להם ערכים מהמשתמש, הדפיסו רק את המחשבים שיש במלאי והמשקל שלהם מעל 2 קילו למסך, כל מחשב ב p משלו.
+
+function computerObject(numOfComputer) {
+  numOfComputer = +prompt("Number of Computers:");
+  for (var i = 0; i < numOfComputer; i++) {
+    var computer = {};
+    computer.company = prompt("Company Name:");
+    computer.version = +prompt("Version:");
+    computer.weight = +prompt("Weight:");
+    computer.stock = confirm("Out Of Stock?");
+    if (computer.stock == true && computer.weight > 2) {
+      document.write(
+        "<p>" +
+          " " +
+          computer.company +
+          " " +
+          computer.version +
+          " " +
+          computer.weight +
+          " " +
+          "</p>"
+      );
+    }
+  }
+}
+
+// computerObject({});
+
+// 22.	צרו פונקציה המקבלת מספר כארגומנט ומייצרת מספר אובייקטים, על פי המספר, של מורה, לכל מורה יש שם מלא, שכר שעתי
+//     , אימייל ושנת לידה.תנו להם ערכים מהמשתמש
+//         , הדפיסו רק את המורים שמקבלים יותר מ 100  שקל לשעה או שנת הלידה שלהם נמוכה מ 1990 למסך, כל מורה ב SPAN משלו.
+
+function teacherObject(numOfTeachers) {
+  for (var i = 0; i < numOfTeachers; i++) {
+    var teacher = {};
+    teacher.fullName = prompt("Full Name:");
+    teacher.hourSalary = +prompt("Hour Salary:");
+    teacher.mail = prompt("Email:");
+    teacher.yearOfBirth = +prompt("Year Of Birth:");
+    if (teacher.hourSalary > 100 || teacher.yearOfBirth < 1990) {
+      document.write("<span>" + " " + teacher.fullName + " " + "</span>");
+    }
+  }
+}
+
+// teacherObject(2);
+
+// 23.	צרו פונקציה המייצרת על פי ארגומנט, מספר אובייקטים, של רהיט, לכל רהיט יש שם, מותג
+//     , מערך חנויות בהן ניתן לקנות את הרהיט, ומחיר.תנו להם ערכים מהמשתמש
+//         , הדפיסו למסך את שם הרהיט ומתחת את החנויות בהן ניתן לקנות הרהיט.
+
+// function furnitureObject(numOfFurniture) {
+//     myArray = [];
+//     for (var i = 0; i < numOfFurniture; i++){
+//         var furnitur = {};
+//         furnitur.name = prompt("Name:");
+//         furnitur.brand = prompt("Brand:");
+//         furnitur.store = prompt("")
+//         furnitur.price = +prompt("Price:");
+//         myArray.push(furnitur.store);
+//     }
+//     document.write(furnitur.name + "<br>" + fruit.store);
+
+
+// }
+// furnitureObject(2);
+// לא פתור!
+
+
+
+
+
+
+
